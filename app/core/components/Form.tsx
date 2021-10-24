@@ -2,6 +2,8 @@ import { ReactNode, PropsWithoutRef } from "react"
 import { Form as FinalForm, FormProps as FinalFormProps } from "react-final-form"
 import { z } from "zod"
 import { validateZodSchema } from "blitz"
+import { Button } from "@chakra-ui/button"
+import { Box, Flex } from "@chakra-ui/layout"
 export { FORM_ERROR } from "final-form"
 
 export interface FormProps<S extends z.ZodType<any, any>>
@@ -29,27 +31,23 @@ export function Form<S extends z.ZodType<any, any>>({
       validate={validateZodSchema(schema)}
       onSubmit={onSubmit}
       render={({ handleSubmit, submitting, submitError }) => (
-        <form onSubmit={handleSubmit} className="form" {...props}>
+        <form onSubmit={handleSubmit} {...props}>
           {/* Form fields supplied as children are rendered here */}
           {children}
 
           {submitError && (
-            <div role="alert" style={{ color: "red" }}>
+            <Box role="alert" color="red.500">
               {submitError}
-            </div>
+            </Box>
           )}
 
           {submitText && (
-            <button type="submit" disabled={submitting}>
-              {submitText}
-            </button>
+            <Flex direction="column" mt="4" alignItems="center">
+              <Button type="submit" disabled={submitting}>
+                {submitText}
+              </Button>
+            </Flex>
           )}
-
-          <style global jsx>{`
-            .form > * + * {
-              margin-top: 1rem;
-            }
-          `}</style>
         </form>
       )}
     />

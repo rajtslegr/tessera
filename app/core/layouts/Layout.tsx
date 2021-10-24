@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import { Head } from "blitz"
+import { Box, Container } from "@chakra-ui/layout"
 
 type LayoutProps = {
   title?: string
@@ -14,7 +15,7 @@ const Layout = ({ title, children }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {children}
+      <Container pt={14}>{children}</Container>
     </>
   )
 }
