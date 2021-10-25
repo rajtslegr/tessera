@@ -1,9 +1,9 @@
-import { AuthenticationError, Link, useMutation, Routes } from "blitz"
-import { LabeledTextField } from "app/core/components/LabeledTextField"
-import { Form, FORM_ERROR } from "app/core/components/Form"
+import { Box, Flex } from "@chakra-ui/layout"
 import login from "app/auth/mutations/login"
 import { Login } from "app/auth/validations"
-import { Box, Flex } from "@chakra-ui/layout"
+import { Form, FORM_ERROR } from "app/core/components/Form"
+import { LabeledTextField } from "app/core/components/LabeledTextField"
+import { AuthenticationError, Link, Routes, useMutation } from "blitz"
 
 type LoginFormProps = {
   onSuccess?: () => void
