@@ -24,7 +24,6 @@ const Sidebar = () => {
       <Text fontSize="4xl" fontWeight="bold">
         tessera
       </Text>
-      <Text>Marks</Text>
     </Box>
   );
 };
