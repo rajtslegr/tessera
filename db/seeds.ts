@@ -1,4 +1,5 @@
-// import db from "./index"
+import { SecurePassword } from 'blitz';
+import db from 'db';
 
 /*
  * This seed function is executed when you run `blitz db seed`.
@@ -8,9 +9,15 @@
  * realistic data.
  */
 const seed = async () => {
-  // for (let i = 0; i < 5; i++) {
-  //   await db.project.create({ data: { name: "Project " + i } })
-  // }
-}
+  await db.user.create({
+    data: {
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      email: 'petr.rajtslegr@gmail.com',
+      hashedPassword: await SecurePassword.hash('asdasdasd'),
+      role: 'USER',
+    },
+  });
+};
 
-export default seed
+export default seed;

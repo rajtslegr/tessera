@@ -1,4 +1,5 @@
 import { Box, Text } from '@chakra-ui/layout';
+import { Link, Routes } from 'blitz';
 
 const Sidebar = () => {
   return (
@@ -24,6 +25,9 @@ const Sidebar = () => {
       <Text fontSize="4xl" fontWeight="bold">
         tessera
       </Text>
+      <Link href={Routes.NotesPage()}>
+        <Text fontWeight="semibold">Notes</Text>
+      </Link>
     </Box>
   );
 };
