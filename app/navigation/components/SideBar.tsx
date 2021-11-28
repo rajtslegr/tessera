@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/layout"
+import { Box, Text } from '@chakra-ui/layout';
 
 const Sidebar = () => {
   return (
@@ -7,7 +7,7 @@ const Sidebar = () => {
       aria-label="Main Navigation"
       pos="sticky"
       sx={{
-        overscrollBehavior: "contain",
+        overscrollBehavior: 'contain',
       }}
       top="6.5rem"
       w="280px"
@@ -19,13 +19,14 @@ const Sidebar = () => {
       overflowY="auto"
       className="sidebar-content"
       flexShrink={0}
-      display={{ base: "none", md: "block" }}
+      display={{ base: 'none', md: 'block' }}
     >
       <Text fontSize="4xl" fontWeight="bold">
         tessera
       </Text>
+      <Text>Marks</Text>
     </Box>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
